@@ -36,14 +36,14 @@ for car in carSorter.sortAsc(cars):
     print repr(car)
 ```
 
-### implemented algoritms
+### Implemented algoritms
 
 bsorting.algorithms provides follwing list of sorting algorithms:
 
-    * BubbleSort
-    * HeapSort
-    * InsertSort
-    * MergeSort
-    * QuickSort
-    * SelectionSort
+    BubbleSort
+    HeapSort
+    InsertSort
+    MergeSort
+    QuickSort
+    SelectionSort
 

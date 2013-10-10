@@ -3,8 +3,8 @@ unit tests for sorting algorithms
 """
 
 import unittest
-import sorting.interfaces
-import sorting.algorithms
+import bsorting.interfaces
+import bsorting.algorithms
 import zope.interface
 
 class _Prepare(unittest.TestCase):
@@ -41,7 +41,7 @@ class TestInsertSort(_Prepare):
 
     def setUp(self):
         _Prepare.setUp(self)
-        self.s = sorting.algorithms.InsertSort(MyItemComparator())
+        self.s = bsorting.algorithms.InsertSort(MyItemComparator())
 
     def test_sortAsc(self):
         self._testSortAsc()
@@ -53,7 +53,7 @@ class TestSelectionSort(_Prepare):
 
     def setUp(self):
         _Prepare.setUp(self)
-        self.s = sorting.algorithms.SelectionSort(MyItemComparator())
+        self.s = bsorting.algorithms.SelectionSort(MyItemComparator())
 
     def test_sortAsc(self):
         self._testSortAsc()
@@ -65,7 +65,7 @@ class TestBubbleSort(_Prepare):
 
     def setUp(self):
         _Prepare.setUp(self)
-        self.s = sorting.algorithms.BubbleSort(MyItemComparator())
+        self.s = bsorting.algorithms.BubbleSort(MyItemComparator())
 
     def test_sortAsc(self):
         self._testSortAsc()
@@ -77,7 +77,7 @@ class TestQuickSort(_Prepare):
 
     def setUp(self):
         _Prepare.setUp(self)
-        self.s = sorting.algorithms.QuickSort(MyItemComparator())
+        self.s = bsorting.algorithms.QuickSort(MyItemComparator())
 
     def test_sortAsc(self):
         self._testSortAsc()
@@ -89,7 +89,7 @@ class TestHeapSort(_Prepare):
 
     def setUp(self):
         _Prepare.setUp(self)
-        self.s = sorting.algorithms.HeapSort(MyItemComparator())
+        self.s = bsorting.algorithms.HeapSort(MyItemComparator())
 
     def test_sortAsc(self):
         self._testSortAsc()
@@ -101,7 +101,7 @@ class TestMergeSort(_Prepare):
 
     def setUp(self):
         _Prepare.setUp(self)
-        self.s = sorting.algorithms.MergeSort(MyItemComparator())
+        self.s = bsorting.algorithms.MergeSort(MyItemComparator())
 
     def test_sortAsc(self):
         self._testSortAsc()
@@ -127,7 +127,7 @@ class MyItem(object):
 
 class MyItemComparator(object):
 
-    zope.interface.implements(sorting.interfaces.Comparator)
+    zope.interface.implements(bsorting.interfaces.IComparator)
 
     def compare(self, o1, o2):
         return o1.value.__cmp__(o2.value)

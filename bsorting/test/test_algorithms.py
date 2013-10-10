@@ -3,11 +3,19 @@ unit tests for sorting algorithms
 """
 
 import unittest
+import random
 import bsorting.interfaces
 import bsorting.algorithms
 import zope.interface
 
 class _Prepare(unittest.TestCase):
+
+    # cardinality of sorted sequences
+    SEQ_CARDINALITY = 100
+
+    # boudary valuest of sorted sequences
+    SEQ_MIN_VALUE = -100
+    SEQ_MAX_VALUE = 100
 
     seq1 = None
     seq2 = None
@@ -15,13 +23,13 @@ class _Prepare(unittest.TestCase):
 
     def setUp(self):
         self.s = None
-        self.seq1 = [MyItem(3), MyItem(33), MyItem(4), MyItem(98), MyItem(77),
-                    MyItem(35), MyItem(9), MyItem(70), MyItem(34), MyItem(6),
-                    MyItem(50), MyItem(36), MyItem(12), MyItem(1), MyItem(81),
-                    MyItem(-50), MyItem(38), MyItem(212), MyItem(13), MyItem(-81),
-                    MyItem(87), MyItem(32), MyItem(-12), MyItem(99), MyItem(181),
-                    MyItem(52), MyItem(6), MyItem(12), MyItem(-1), MyItem(81),
-                    MyItem(24), MyItem(33), MyItem(97), MyItem(11), MyItem(8)]
+
+        # create sequnce 1
+        self.seq1 = []
+        for i in xrange(self.SEQ_CARDINALITY):
+            self.seq1.append(MyItem(random.randint(self.SEQ_MIN_VALUE, self.SEQ_MAX_VALUE)))
+
+        # create sequence 2
         self.seq2 = []
         for i in self.seq1:
             self.seq2.append(i)
